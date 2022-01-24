@@ -1,0 +1,306 @@
+<html>
+<head>
+  <title>Membership</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #ff5151;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+  width:100%;
+
+
+}
+.container {
+  padding: 20px;
+  background-color: white;
+  width:100%;
+
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 30px;
+}
+
+/* Set a style for the submit button */
+.submit {
+  background-color: #ff897c;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.7;
+}
+
+.submit:hover {
+  opacity: 2;
+}
+
+.reset {
+  background-color: red;
+  color: white;
+  padding: 13px 16px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.7;
+}
+
+.reset:hover {
+  opacity: 2;
+}
+
+</style>
+
+<script language="javascript">
+
+  function checkForm(form)
+  {
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.email.value == "") {
+      alert("Error: Email cannot be blank!");
+      form.email.focus();
+      return false;
+    }
+   
+    if(form.pwd.value != "" && form.pwd.value == form.pwd2.value) {
+      if(form.pwd.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd.focus();
+        return false;
+      }
+      if(form.pwd.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd.focus();
+      return false;
+    }
+
+    alert("You have sucessfully registered!");
+    return true;
+  }
+
+</script>
+</head>
+<body>
+<center>
+<a href="index.html"> <img src="slogann.png" alt="logo" width="100%"> </a>
+</center>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="aboutme.html">About Me</a>
+  <div class="dropdown">
+    <button class="dropbtn">Teaching Videos
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="basicknow.html">Basic Knowledge</a>
+      <a href="howtoplayscales.html">How to play scales</a>
+      <a href="tvgrade1-2.html">Grade 1-2</a>
+      <a href="tvgrade3-4.html">Grade 3-4</a>
+      <a href="tvgrade5-6.html">Grade 5-6</a>
+    </div>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">Music Sheets
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="scales.html">Scales</a>
+      <a href="msgrade1-2.html">Grade 1-2</a>
+      <a href="msgrade3-4.html">Grade 3-4</a>
+      <a href="msgrade5-6.html">Grade 5-6</a>
+    </div>
+  </div>
+  <a href="appformusicexam.html">Applications for Music Exams</a>
+  <a href="comments.html">Comments</a>
+  <a href="Membership.html">Membership</a>
+</div>
+
+
+
+  
+  
+<form name="register" onsubmit="return checkForm(this);" >   
+  <div class="container">
+       <h1>Register</h1>
+      <p>Let's fill in this form to create an account!</p>
+      If you already have a account, let's<a href="#login"> login </a>now!
+       <hr>
+      
+      <br><label for="username"><b>Username</b></label>
+      <br><input type="text" placeholder="Enter Username" name="username" required>
+
+      <br><label for="email"><b>Email</b></label>
+      <br><input type="email" placeholder="Enter Email" name="email" required>
+
+      <br><label for="psw"><b>Password</b></label>
+      <br><input type="password" placeholder="Enter Password" name="pwd" required>
+
+      <br><label for="psw-repeat"><b>Repeat Password</b></label>
+      <br><input type="password" placeholder="Repeat Password" name="pwd2" required>
+      <hr>
+
+
+   <center><input type="submit" class="submit" name="submit">
+    <input type="reset" class="reset" name="reset"></center>
+  </div>
+</form>
+
+
+
+  <form name="Loginform" onsubmit="alert('You have sucessfully logged in!')" >
+    <div class="container">
+    <p id="login">
+       <h1>Login</h1>
+       <hr>
+    <br><label for="username"><b>Username</b></label>
+    <br><input type="text" placeholder="Enter Username" name="uname" required>
+
+    <br><label for="pwd"><b>Password</b></label>
+    <br><input type="password" placeholder="Enter Password" name="pwd" required>
+
+    <br><label>
+      <input type="checkbox" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <center><input type="submit" class="submit" name="submit">
+    <input type="reset" class="reset" name="reset"></center>
+    <center><a href="#top">
+   <input type="button" value="Back to top" class="submit">
+     </a>
+  </div>
+  
+
+</form>
+
+
+  </body>
+</html>
